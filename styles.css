@@ -30,14 +30,24 @@ body {
   display: grid;
   align-items: center;
   padding: clamp(20px, 3vh, 40px) 0;
+}
+
+.hero .container {
+  min-height: min(90vh, 760px);
+  display: grid;
+  align-items: center;
+  border-radius: 28px;
+  overflow: hidden;
   background:
     linear-gradient(90deg, rgba(246, 240, 251, 0.97) 0%, rgba(246, 240, 251, 0.88) 36%, rgba(246, 240, 251, 0.22) 62%, rgba(246, 240, 251, 0.04) 100%),
     linear-gradient(180deg, rgba(26, 18, 39, 0.06) 0%, rgba(26, 18, 39, 0.18) 100%),
     url("public/images/01-hero/hero-main-woman.png") center / cover no-repeat;
+  box-shadow: 0 22px 48px rgba(53, 38, 74, 0.16);
 }
 
 .hero__content {
   max-width: min(640px, 56vw);
+  margin-left: clamp(20px, 3vw, 36px);
   padding: clamp(24px, 4vw, 44px) clamp(20px, 3vw, 34px);
   border-radius: 20px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.58));
@@ -86,11 +96,17 @@ h1 {
   .hero {
     min-height: auto;
     padding: 26px 0 34px;
+  }
+
+  .hero .container {
+    min-height: min(95vh, 680px);
     background-position: 64% center;
   }
 
   .hero__content {
     max-width: 100%;
+    margin-left: 14px;
+    margin-right: 14px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.68));
   }
 }
