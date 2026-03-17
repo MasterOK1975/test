@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-  width: min(1320px, 94vw);
+  width: min(1440px, 94vw);
   margin: 0 auto;
 }
 
@@ -41,7 +41,7 @@ body {
   background:
     linear-gradient(90deg, rgba(246, 240, 251, 0.97) 0%, rgba(246, 240, 251, 0.88) 36%, rgba(246, 240, 251, 0.22) 62%, rgba(246, 240, 251, 0.04) 100%),
     linear-gradient(180deg, rgba(26, 18, 39, 0.06) 0%, rgba(26, 18, 39, 0.18) 100%),
-    url("public/images/01-hero/hero-main-woman.png") 60% center / cover no-repeat;
+    url("public/images/01-hero/hero-main-woman.png") 60% 10% / cover no-repeat;
   box-shadow: 0 22px 48px rgba(53, 38, 74, 0.16);
 }
 
