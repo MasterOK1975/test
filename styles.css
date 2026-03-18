@@ -39,9 +39,9 @@ body {
   border-radius: 28px;
   overflow: hidden;
   background:
-    linear-gradient(90deg, rgba(246, 240, 251, 0.97) 0%, rgba(246, 240, 251, 0.88) 36%, rgba(246, 240, 251, 0.22) 62%, rgba(246, 240, 251, 0.04) 100%),
-    linear-gradient(180deg, rgba(26, 18, 39, 0.06) 0%, rgba(26, 18, 39, 0.18) 100%),
-    url("public/images/01-hero/hero-main-woman.png") 60% center / cover no-repeat;
+    linear-gradient(90deg, rgba(246, 240, 251, 0.97) 0%, rgba(246, 240, 251, 0.9) 34%, rgba(246, 240, 251, 0.4) 58%, rgba(246, 240, 251, 0.12) 100%),
+    linear-gradient(180deg, rgba(26, 18, 39, 0.05) 0%, rgba(26, 18, 39, 0.16) 100%),
+    url("assets/images/01-hero-main.jpg") 60% center / cover no-repeat;
   box-shadow: 0 22px 48px rgba(53, 38, 74, 0.16);
 }
 
@@ -116,6 +116,9 @@ h1 {
 
 .recognition {
   padding: clamp(14px, 2.4vw, 28px) 0 clamp(58px, 8vw, 92px);
+  background:
+    linear-gradient(180deg, rgba(247, 243, 248, 0.92), rgba(245, 239, 248, 0.78)),
+    url("assets/images/02-symptoms-bg-soft.jpg") center / cover no-repeat;
 }
 
 .recognition .container {
@@ -1219,6 +1222,33 @@ h1 {
   background: linear-gradient(180deg, rgba(246,241,248,0.42), rgba(243,238,246,0.8));
 }
 
+.roadmap-block,
+.value-block {
+  position: relative;
+  isolation: isolate;
+}
+
+.roadmap-block::before,
+.value-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.roadmap-block::before {
+  background:
+    linear-gradient(180deg, rgba(248, 244, 249, 0.94), rgba(245, 240, 247, 0.82)),
+    url("assets/images/05-method-grounding-abstract.jpg") center / cover no-repeat;
+}
+
+.value-block::before {
+  background:
+    linear-gradient(180deg, rgba(246, 241, 248, 0.9), rgba(243, 238, 246, 0.86)),
+    url("assets/images/08-bonus-energy-glow.jpg") center / cover no-repeat;
+}
+
 .block-head,
 .block-copy {
   max-width: 800px;
@@ -1362,6 +1392,65 @@ h1 {
 
 .media-placeholder--video {
   min-height: 210px;
+}
+
+.media-placeholder[data-image-placeholder="09-results-balanced-abstract.jpg"],
+.media-placeholder[data-image-placeholder="06-program-soft-structure-bg.jpg"],
+.media-placeholder[data-image-placeholder="04-expert-editorial-portrait-01.jpg"],
+.media-placeholder[data-image-placeholder="04-expert-editorial-portrait-02.jpg"],
+.media-placeholder[data-image-placeholder="07-format-choice-soft-bg.jpg"],
+.media-placeholder[data-image-placeholder="10-cta-soft-radiance.jpg"] {
+  border-style: solid;
+  border-color: rgba(143,121,165,0.1);
+  background-color: #f6f0fb;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.media-placeholder[data-image-placeholder="09-results-balanced-abstract.jpg"] {
+  background-image:
+    linear-gradient(180deg, rgba(248, 243, 249, 0.18), rgba(242, 236, 246, 0.28)),
+    url("assets/images/09-results-balanced-abstract.jpg");
+}
+
+.media-placeholder[data-image-placeholder="06-program-soft-structure-bg.jpg"] {
+  background-image:
+    linear-gradient(180deg, rgba(248, 243, 249, 0.36), rgba(243, 237, 247, 0.54)),
+    url("assets/images/06-program-soft-structure-bg.jpg");
+}
+
+.media-placeholder[data-image-placeholder="04-expert-editorial-portrait-01.jpg"] {
+  background-image:
+    linear-gradient(180deg, rgba(248, 243, 249, 0.08), rgba(242, 236, 246, 0.18)),
+    url("assets/images/04-expert-editorial-portrait-01.jpg");
+}
+
+.media-placeholder[data-image-placeholder="04-expert-editorial-portrait-02.jpg"] {
+  background-image:
+    linear-gradient(180deg, rgba(248, 243, 249, 0.08), rgba(242, 236, 246, 0.18)),
+    url("assets/images/04-expert-editorial-portrait-02.jpg");
+}
+
+.media-placeholder[data-image-placeholder="07-format-choice-soft-bg.jpg"] {
+  background-image:
+    linear-gradient(180deg, rgba(248, 243, 249, 0.18), rgba(242, 236, 246, 0.34)),
+    url("assets/images/07-format-choice-soft-bg.jpg");
+}
+
+.media-placeholder[data-image-placeholder="10-cta-soft-radiance.jpg"] {
+  background-image:
+    linear-gradient(180deg, rgba(248, 243, 249, 0.16), rgba(242, 236, 246, 0.3)),
+    url("assets/images/10-cta-soft-radiance.jpg");
+}
+
+.media-placeholder[data-image-placeholder="09-results-balanced-abstract.jpg"]::after,
+.media-placeholder[data-image-placeholder="06-program-soft-structure-bg.jpg"]::after,
+.media-placeholder[data-image-placeholder="04-expert-editorial-portrait-01.jpg"]::after,
+.media-placeholder[data-image-placeholder="04-expert-editorial-portrait-02.jpg"]::after,
+.media-placeholder[data-image-placeholder="07-format-choice-soft-bg.jpg"]::after,
+.media-placeholder[data-image-placeholder="10-cta-soft-radiance.jpg"]::after {
+  content: none;
 }
 
 .reason-list {
