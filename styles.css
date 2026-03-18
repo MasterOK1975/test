@@ -1308,11 +1308,60 @@ h1 {
 
 .visual-placeholder--soft {
   background:
-    url("public/images/03-results/results-women-img.png") center / cover no-repeat,
     radial-gradient(circle at 38% 28%, rgba(255,255,255,0.95), transparent 24%),
     radial-gradient(circle at 70% 36%, rgba(143,121,165,0.12), transparent 18%),
     radial-gradient(circle at 54% 72%, rgba(143,121,165,0.08), transparent 26%),
     linear-gradient(180deg, rgba(255,255,255,0.7), rgba(247,242,250,0.88));
+}
+
+.media-placeholder {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: end start;
+  min-height: 220px;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px dashed rgba(143,121,165,0.26);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.72), transparent 0 22%),
+    radial-gradient(circle at 75% 30%, rgba(143,121,165,0.14), transparent 0 20%),
+    radial-gradient(circle at 55% 70%, rgba(143,121,165,0.1), transparent 0 24%),
+    linear-gradient(180deg, rgba(255,255,255,0.58), rgba(245,239,249,0.94));
+}
+
+.media-placeholder::after {
+  content: attr(data-image-placeholder);
+  display: inline-flex;
+  align-items: center;
+  max-width: min(100%, 320px);
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.88);
+  border: 1px solid rgba(143,121,165,0.18);
+  color: #6f6480;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.media-placeholder--band {
+  min-height: 140px;
+  margin: 20px 0 24px;
+}
+
+.media-placeholder--compact {
+  min-height: 180px;
+  margin-bottom: 20px;
+}
+
+.media-placeholder--wide {
+  min-height: 180px;
+  margin-bottom: 24px;
+}
+
+.media-placeholder--video {
+  min-height: 210px;
 }
 
 .reason-list {
