@@ -158,21 +158,9 @@ h1 {
   box-shadow: 0 8px 18px rgba(80, 58, 113, 0.06);
 }
 
-.state-card::before {
-  content: "";
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  width: 28px;
-  height: 28px;
-  border-radius: 10px;
-  border: 1px solid rgba(120, 88, 150, 0.32);
-  background: rgba(255, 255, 255, 0.9);
-}
-
 .state-card h3 {
   margin: 2px 0 10px;
-  padding-left: 40px;
+  padding-left: 0;
   font-size: 1.02rem;
   line-height: 1.35;
   font-weight: 600;
@@ -186,46 +174,116 @@ h1 {
   color: #525c6d;
 }
 
-.state-card--anxiety::before {
-  background:
-    radial-gradient(circle at 50% 50%, transparent 35%, rgba(120, 88, 150, 0.56) 36%, rgba(120, 88, 150, 0.56) 43%, transparent 44%),
-    radial-gradient(circle at 50% 50%, transparent 56%, rgba(120, 88, 150, 0.34) 57%, rgba(120, 88, 150, 0.34) 63%, transparent 64%),
-    #fff;
+.state-card__icon {
+  --icon-color: #8e7aa8;
+  --size: 42px;
+  --stroke: 2px;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  margin-bottom: 16px;
+  color: var(--icon-color);
+  flex: 0 0 auto;
 }
 
-.state-card--support::before {
-  background:
-    linear-gradient(180deg, transparent 0 58%, rgba(120, 88, 150, 0.6) 58% 65%, transparent 65% 100%),
-    radial-gradient(circle at 50% 36%, rgba(120, 88, 150, 0.18) 0 26%, transparent 27%),
-    #fff;
+.icon-anxiety {
+  --wave-gap: 18px;
+  box-sizing: border-box;
 }
 
-.state-card--fatigue::before {
-  background:
-    conic-gradient(from 270deg, rgba(120, 88, 150, 0.58) 0 110deg, rgba(120, 88, 150, 0.15) 110deg 360deg),
-    #fff;
+.icon-anxiety::before {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  width: 46%;
+  height: 46%;
+  transform: translate(-50%, -50%);
+  border: var(--stroke) solid var(--icon-color);
   border-radius: 50%;
+  box-sizing: border-box;
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--icon-color) 22%, transparent),
+    0 0 0 5.5px transparent,
+    0 0 0 8px color-mix(in srgb, var(--icon-color) 12%, transparent);
 }
 
-.state-card--loop::before {
+.icon-anxiety::after {
+  content: "";
+  position: absolute;
+  inset: 50%;
+  width: 92%;
+  height: 92%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  box-sizing: border-box;
+  pointer-events: none;
   background:
-    radial-gradient(circle at 56% 42%, transparent 44%, rgba(120, 88, 150, 0.56) 45% 52%, transparent 53%),
-    linear-gradient(140deg, transparent 48%, rgba(120, 88, 150, 0.56) 48% 57%, transparent 57%),
-    #fff;
+    radial-gradient(100% 100% at 0% 50%, transparent 58%, var(--icon-color) 58.8% 60.2%, transparent 61%) left center / 32% 54% no-repeat,
+    radial-gradient(100% 100% at 0% 50%, transparent 68%, var(--icon-color) 68.8% 70.2%, transparent 71%) left center / 42% 72% no-repeat,
+    radial-gradient(100% 100% at 100% 50%, transparent 58%, var(--icon-color) 58.8% 60.2%, transparent 61%) right center / 32% 54% no-repeat,
+    radial-gradient(100% 100% at 100% 50%, transparent 68%, var(--icon-color) 68.8% 70.2%, transparent 71%) right center / 42% 72% no-repeat,
+    radial-gradient(100% 100% at 50% 0%, transparent 67%, var(--icon-color) 67.8% 69.2%, transparent 70%) center top / 42% 24% no-repeat,
+    radial-gradient(100% 100% at 50% 100%, transparent 67%, var(--icon-color) 67.8% 69.2%, transparent 70%) center bottom / 42% 24% no-repeat;
 }
 
-.state-card--drain::before {
-  background:
-    linear-gradient(180deg, rgba(120, 88, 150, 0.14) 0 42%, transparent 42% 100%),
-    linear-gradient(90deg, transparent 28%, rgba(120, 88, 150, 0.42) 28% 72%, transparent 72%),
-    #fff;
+.icon-support::before,
+.icon-fatigue::before,
+.icon-loop::before,
+.icon-drain::before,
+.icon-deadend::before {
+  content: "";
+  position: absolute;
+  inset: 0;
 }
 
-.state-card--deadend::before {
+.icon-support::before {
   background:
-    linear-gradient(90deg, transparent 0 30%, rgba(120, 88, 150, 0.58) 30% 72%, transparent 72%),
-    linear-gradient(180deg, transparent 0 62%, rgba(120, 88, 150, 0.58) 62% 76%, transparent 76%),
-    #fff;
+    linear-gradient(180deg, transparent 0 57%, var(--icon-color) 57% 64%, transparent 64% 100%),
+    radial-gradient(circle at 50% 34%, color-mix(in srgb, var(--icon-color) 20%, transparent) 0 22%, transparent 23%);
+  background-repeat: no-repeat;
+  background-size: 62% 62%, 100% 100%;
+  background-position: center center, center center;
+}
+
+.icon-fatigue::before {
+  border-radius: 50%;
+  background: conic-gradient(from 235deg, var(--icon-color) 0 125deg, color-mix(in srgb, var(--icon-color) 20%, transparent) 125deg 330deg, transparent 330deg 360deg);
+  -webkit-mask: radial-gradient(circle, transparent 52%, #000 54%);
+  mask: radial-gradient(circle, transparent 52%, #000 54%);
+}
+
+.icon-loop::before {
+  border-radius: 50%;
+  border: var(--stroke) solid transparent;
+  box-shadow: inset 0 0 0 var(--stroke) var(--icon-color);
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 72% 70%, 72% 100%, 0 100%);
+}
+
+.icon-loop::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 2px;
+  border-left: 8px solid var(--icon-color);
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.icon-drain::before {
+  border: var(--stroke) solid var(--icon-color);
+  border-radius: 10px;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--icon-color) 16%, transparent) 0 26%, transparent 26% 100%),
+    linear-gradient(180deg, transparent 0 62%, color-mix(in srgb, var(--icon-color) 34%, transparent) 62% 100%);
+}
+
+.icon-deadend::before {
+  background:
+    linear-gradient(90deg, transparent 0 18%, var(--icon-color) 18% 64%, transparent 64% 100%),
+    linear-gradient(180deg, transparent 0 34%, var(--icon-color) 34% 76%, transparent 76% 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 18%, 24% 60%;
+  background-position: left 50% center, right 8% center;
 }
 
 @media (max-width: 1100px) {
