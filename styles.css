@@ -26,14 +26,14 @@ body {
 }
 
 .hero {
-  min-height: 96vh;
+  min-height: 100vh;
   display: grid;
-  align-items: center;
-  padding: clamp(10px, 1.8vh, 24px) 0;
+  align-items: top;
+  padding: clamp(20px, 1.8vh, 24px) 0;
 }
 
 .hero .container {
-  min-height: min(86vh, 740px);
+  min-height: min(86vh, 600px);
   display: grid;
   align-items: center;
   border-radius: 28px;
@@ -41,7 +41,7 @@ body {
   background:
     linear-gradient(90deg, rgba(246, 240, 251, 0.97) 0%, rgba(246, 240, 251, 0.88) 36%, rgba(246, 240, 251, 0.22) 62%, rgba(246, 240, 251, 0.04) 100%),
     linear-gradient(180deg, rgba(26, 18, 39, 0.06) 0%, rgba(26, 18, 39, 0.18) 100%),
-    url("public/images/01-hero/hero-main-woman.png") 60% 10% / cover no-repeat;
+    url("public/images/01-hero/hero-main-woman.png") 60% 0% / cover no-repeat;
   box-shadow: 0 22px 48px rgba(53, 38, 74, 0.16);
 }
 
