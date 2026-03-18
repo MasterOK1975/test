@@ -119,11 +119,7 @@ h1 {
 }
 
 .recognition .container {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.42));
-  border: 1px solid rgba(130, 103, 160, 0.1);
-  border-radius: 28px;
-  padding: clamp(26px, 4vw, 42px);
-  box-shadow: 0 14px 28px rgba(84, 63, 114, 0.06);
+  padding: 0;
 }
 
 .recognition__head {
