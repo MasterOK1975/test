@@ -1,0 +1,255 @@
+:root {
+  --text: #1f2430;
+  --muted: #5f6674;
+  --accent: #785896;
+  --accent-dark: #664684;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #f7f3f8 0%, #f5eff8 100%);
+}
+
+.page {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1320px, 94vw);
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 96vh;
+  display: grid;
+  align-items: center;
+  padding: clamp(10px, 1.8vh, 24px) 0;
+}
+
+.hero .container {
+  min-height: min(86vh, 740px);
+  display: grid;
+  align-items: center;
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(246, 240, 251, 0.97) 0%, rgba(246, 240, 251, 0.88) 36%, rgba(246, 240, 251, 0.22) 62%, rgba(246, 240, 251, 0.04) 100%),
+    linear-gradient(180deg, rgba(26, 18, 39, 0.06) 0%, rgba(26, 18, 39, 0.18) 100%),
+    url("public/images/01-hero/hero-main-woman.png") 60% center / cover no-repeat;
+  box-shadow: 0 22px 48px rgba(53, 38, 74, 0.16);
+}
+
+.hero__content {
+  max-width: min(640px, 49vw);
+  margin-left: clamp(24px, 3.3vw, 46px);
+  padding: clamp(24px, 4vw, 44px) clamp(20px, 3vw, 34px) clamp(24px, 4vw, 44px) 0;
+}
+
+.hero__eyebrow {
+  margin: 0 0 14px;
+  font-size: 1.14rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 800;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(1.9rem, 3.45vw, 3.05rem);
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+}
+
+.hero-title__line {
+  display: block;
+}
+
+.hero__lead {
+  margin: 24px 0 0;
+  max-width: 48ch;
+  color: #667082;
+  font-size: clamp(1.02rem, 1.22vw, 1.14rem);
+  line-height: 1.84;
+}
+
+.hero__cta {
+  display: inline-flex;
+  margin-top: 28px;
+  padding: 10px 23px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 9px 18px rgba(95, 67, 128, 0.24);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    padding: 26px 0 34px;
+  }
+
+  .hero .container {
+    min-height: min(95vh, 680px);
+    background-position: 64% center;
+  }
+
+  .hero__content {
+    max-width: 100%;
+    margin-left: 14px;
+    margin-right: 14px;
+    padding: 20px 0 24px;
+  }
+}
+
+.recognition {
+  padding: clamp(14px, 2.4vw, 28px) 0 clamp(58px, 8vw, 92px);
+}
+
+.recognition .container {
+  padding: 0;
+}
+
+.recognition__head {
+  max-width: 760px;
+  margin-bottom: clamp(22px, 3vw, 34px);
+}
+
+.recognition__head h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2.3vw, 2.35rem);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  color: #2a2f3b;
+}
+
+.recognition__head p {
+  margin: 14px 0 0;
+  font-size: clamp(1rem, 1.25vw, 1.11rem);
+  line-height: 1.72;
+  color: #667182;
+}
+
+.recognition__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.state-card {
+  position: relative;
+  min-height: 172px;
+  border-radius: 18px;
+  padding: 18px 18px 18px 18px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(252, 249, 255, 0.94));
+  border: 1px solid rgba(131, 104, 161, 0.09);
+  box-shadow: 0 8px 18px rgba(80, 58, 113, 0.06);
+}
+
+.state-card::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 88, 150, 0.32);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.state-card h3 {
+  margin: 2px 0 10px;
+  padding-left: 40px;
+  font-size: 1.02rem;
+  line-height: 1.35;
+  font-weight: 600;
+  color: #2f3441;
+}
+
+.state-card p {
+  margin: 0;
+  font-size: 0.97rem;
+  line-height: 1.58;
+  color: #525c6d;
+}
+
+.state-card--anxiety::before {
+  background:
+    radial-gradient(circle at 50% 50%, transparent 35%, rgba(120, 88, 150, 0.56) 36%, rgba(120, 88, 150, 0.56) 43%, transparent 44%),
+    radial-gradient(circle at 50% 50%, transparent 56%, rgba(120, 88, 150, 0.34) 57%, rgba(120, 88, 150, 0.34) 63%, transparent 64%),
+    #fff;
+}
+
+.state-card--support::before {
+  background:
+    linear-gradient(180deg, transparent 0 58%, rgba(120, 88, 150, 0.6) 58% 65%, transparent 65% 100%),
+    radial-gradient(circle at 50% 36%, rgba(120, 88, 150, 0.18) 0 26%, transparent 27%),
+    #fff;
+}
+
+.state-card--fatigue::before {
+  background:
+    conic-gradient(from 270deg, rgba(120, 88, 150, 0.58) 0 110deg, rgba(120, 88, 150, 0.15) 110deg 360deg),
+    #fff;
+  border-radius: 50%;
+}
+
+.state-card--loop::before {
+  background:
+    radial-gradient(circle at 56% 42%, transparent 44%, rgba(120, 88, 150, 0.56) 45% 52%, transparent 53%),
+    linear-gradient(140deg, transparent 48%, rgba(120, 88, 150, 0.56) 48% 57%, transparent 57%),
+    #fff;
+}
+
+.state-card--drain::before {
+  background:
+    linear-gradient(180deg, rgba(120, 88, 150, 0.14) 0 42%, transparent 42% 100%),
+    linear-gradient(90deg, transparent 28%, rgba(120, 88, 150, 0.42) 28% 72%, transparent 72%),
+    #fff;
+}
+
+.state-card--deadend::before {
+  background:
+    linear-gradient(90deg, transparent 0 30%, rgba(120, 88, 150, 0.58) 30% 72%, transparent 72%),
+    linear-gradient(180deg, transparent 0 62%, rgba(120, 88, 150, 0.58) 62% 76%, transparent 76%),
+    #fff;
+}
+
+@media (max-width: 1100px) {
+  .recognition__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .recognition {
+    padding-top: 16px;
+  }
+
+  .recognition__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .state-card {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .recognition__grid {
+    grid-template-columns: 1fr;
+  }
+}
